@@ -51,7 +51,7 @@ document.addEventListener('keydown', function (e) {
 
 btnLogin.addEventListener('click', function (e) {
   e.preventDefault();
-  window.location.href = 'app.html';
+  window.location.href = btnLogin.href;
 });
 
 ///////////////////////////////////////
