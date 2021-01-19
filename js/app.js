@@ -26,7 +26,7 @@ const account1 = {
 };
 
 const account2 = {
-  owner: 'Jessica Davis',
+  owner: 'Maria Rushkova',
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
   pin: 2222,
@@ -41,8 +41,8 @@ const account2 = {
     '2021-01-07T18:49:59.371Z',
     '2021-01-08T12:01:20.894Z',
   ],
-  currency: 'USD',
-  locale: 'en-US',
+  currency: 'PLN',
+  locale: 'pl-PL',
 };
 
 const accounts = [account1, account2];
@@ -99,6 +99,7 @@ const formatCur = function (value, locale, currency) {
 
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
+  console.log(acc.movements);
 
   const movs = sort
     ? acc.movements.slice().sort((a, b) => a - b)
@@ -218,11 +219,9 @@ btnLogin.addEventListener('click', function (e) {
 
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     // Display UI and message
-    containerApp.style.opacity = 100;
     login.style.top = '-150%';
-
+    containerApp.style.opacity = 100;
     btnLogout.style.display = 'block';
-
     labelWelcome.textContent = `Welcome back, ${
       currentAccount.owner.split(' ')[0]
     }`;
@@ -335,9 +334,8 @@ btnClose.addEventListener('click', function (e) {
 });
 
 let sorted = false;
-
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
-  displayMovements(currentAccount.movements, !sorted);
+  displayMovements(currentAccount, !sorted);
   sorted = !sorted;
 });
