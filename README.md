@@ -8,7 +8,7 @@ This desktop version has such nice effects like sticky navigation, lazy load ima
 
 
 
-## [Web application](https://mrushkova.github.io/app.html)
+## [Web application](https://mrushkova.github.io/bankist-app/app.html)
 
 The interface provides a list of user transactions, as well as the function of sending a payment to another user or requesting a loan from a  bank.
 
